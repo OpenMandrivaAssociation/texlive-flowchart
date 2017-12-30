@@ -5,8 +5,8 @@
 # catalog-license lppl1.3
 # catalog-version 3.2
 Name:		texlive-flowchart
-Version:	3.2
-Release:	9
+Version:	3.3
+Release:	1
 Summary:	Shapes for drawing flowcharts, using TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/flowchart
