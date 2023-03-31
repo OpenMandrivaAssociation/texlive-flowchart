@@ -1,6 +1,6 @@
 Name:		texlive-flowchart
 Version:	36572
-Release:	1
+Release:	2
 Summary:	Shapes for drawing flowcharts, using TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/flowchart
