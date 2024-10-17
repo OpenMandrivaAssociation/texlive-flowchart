@@ -3,7 +3,7 @@ Version:	36572
 Release:	2
 Summary:	Shapes for drawing flowcharts, using TikZ
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/flowchart
+URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/flowchart
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.doc.r%{version}.tar.xz
