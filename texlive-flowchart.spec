@@ -1,49 +1,25 @@
-Name:		texlive-flowchart
-Version:	36572
-Release:	2
+%global tl_name flowchart
+%global tl_revision 36572
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.3
+Release:	%{tl_revision}.1
 Summary:	Shapes for drawing flowcharts, using TikZ
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pgf/contrib/flowchart
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/flowchart.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	make
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a set of 'traditional' flowchart element
-shapes; the documentation shows how to build a flowchart from
-these elements, using pgf/TikZ. The package also requires the
-makeshape package.
+The package provides a set of 'traditional' flowchart element shapes;
+the documentation shows how to build a flowchart from these elements,
+using pgf/TikZ. The package also requires the makeshape package.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/flowchart/flowchart.sty
-%doc %{_texmfdistdir}/doc/latex/flowchart/README
-%doc %{_texmfdistdir}/doc/latex/flowchart/flowchart.pdf
-#- source
-%doc %{_texmfdistdir}/source/latex/flowchart/flowchart.dtx
-%doc %{_texmfdistdir}/source/latex/flowchart/flowchart.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
